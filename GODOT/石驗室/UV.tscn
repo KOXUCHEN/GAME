@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://5od0fq1572ic"]
+
+[ext_resource type="PackedScene" uid="uid://bewl6xfepa82j" path="res://UV燈箱門.glb" id="1_1tgvj"]
+
+[ext_resource type="Script" path="res://scripts/instruments/UVBox.gd" id="2_uvbox_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ik31s"]
+size = Vector3(0.49612427, 0.41241455, 0.30319214)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_interaction"]
+size = Vector3(0.95, 0.95, 0.95)
+
+[node name="Node3D" type="Node3D" unique_id=1576843360]
+script = ExtResource("2_uvbox_script")
+display_name = "UV Box"
+instrument_camera_path = NodePath("Camera3D")
+interaction_area_path = NodePath("InteractionArea")
+long_wave_light_path = NodePath("LongWaveLight")
+short_wave_light_path = NodePath("ShortWaveLight")
+
+[node name="UV燈箱門" parent="." unique_id=245600469 instance=ExtResource("1_1tgvj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="UV燈箱門" unique_id=1350768162]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UV燈箱門/StaticBody3D" unique_id=170297647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028533936, 0.2026062, -0.006210327)
+shape = SubResource("BoxShape3D_ik31s")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=221159838]
+transform = Transform3D(1, 0, 0, 0, 0.9838981, 0.17873047, 0, -0.17873047, 0.9838981, 0, 0.14152229, 0.10667792)
+
+[node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0)
+shape = SubResource("BoxShape3D_interaction")
+
+[node name="LongWaveLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0)
+visible = false
+light_color = Color(0.45, 0.22, 1, 1)
+light_energy = 2.4
+omni_range = 1.25
+
+[node name="ShortWaveLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0)
+visible = false
+light_color = Color(0.1, 0.45, 1, 1)
+light_energy = 3.0
+omni_range = 1.05

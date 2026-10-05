@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://qtctkwdnyp2u"]
+
+[ext_resource type="Script" uid="uid://bscjp5cb1tps6" path="res://collectionwall.gd" id="1_auow5"]
+[ext_resource type="PackedScene" uid="uid://7y8hitgq212p" path="res://hexdisplay.tscn" id="2_3w885"]
+
+[node name="CollectionWall" type="Node3D" unique_id=789376542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035655484, 0.05003041, 0.037058666)
+script = ExtResource("1_auow5")
+hex_display_scene = ExtResource("2_3w885")
+rows = 3
+columns = 2
+spacing_x = 3.0
+spacing_y = 3.0
+generate_wall = true
+clear_wall = true

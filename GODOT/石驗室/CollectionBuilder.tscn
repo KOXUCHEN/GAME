@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cecuaqig1jq7o"]
+
+[ext_resource type="Script" uid="uid://ce6hl5rl7e1mj" path="res://CollectionBuilder.gd" id="1_kjkwo"]
+[ext_resource type="PackedScene" uid="uid://7y8hitgq212p" path="res://hexdisplay.tscn" id="2_bd350"]
+[ext_resource type="PackedScene" uid="uid://dsmoapjs8ed24" path="res://HexGhost.tscn" id="3_hk3ep"]
+
+[node name="Node3D" type="Node3D" unique_id=988742608]
+script = ExtResource("1_kjkwo")
+hex_display_scene = ExtResource("2_bd350")
+ghost_scene = ExtResource("3_hk3ep")

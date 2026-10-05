@@ -1,0 +1,44 @@
+# =========================
+# Godot generated files
+# =========================
+.godot/
+.import/
+
+# =========================
+# Temporary / backup files
+# =========================
+*.bak
+*.tmp
+*.log
+
+# =========================
+# Blender backup files
+# =========================
+*.blend1
+*.blend2
+*.blend@
+
+# =========================
+# Windows
+# =========================
+Thumbs.db
+Desktop.ini
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Python cache (if any)
+# =========================
+__pycache__/
+*.pyc
+# Large Blender source files
+*.blend

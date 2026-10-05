@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c713ajvc5vtek"]
+
+[ext_resource type="Script" uid="uid://bscjp5cb1tps6" path="res://collectionwall.gd" id="1_l6gx6"]
+[ext_resource type="PackedScene" uid="uid://7y8hitgq212p" path="res://hexdisplay.tscn" id="2_ralpq"]
+
+[node name="CollectionWall" type="Node3D" unique_id=1627862707]
+transform = Transform3D(24.305, 0, 0, 0, 24.305, 0, 0, 0, 24.305, 0, 0, 0)
+script = ExtResource("1_l6gx6")
+hex_display_scene = ExtResource("2_ralpq")
+rows = 3
+columns = 4
+spacing_x = 0.3
+spacing_y = 0.4
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1092786616]
+transform = Transform3D(0.041143797, 0, 0, 0, 0.038662523, 0.014072007, 0, -0.014072007, 0.038662523, 3, 3, 8)

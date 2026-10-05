@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GemData" format=3 uid="uid://c5gd1ht8s2qe0"]
+
+[ext_resource type="Script" uid="uid://btimigubkv3a3" path="res://scripts/data/GemData.gd" id="1_gemdata"]
+
+[resource]
+script = ExtResource("1_gemdata")
+gem_name = "Ruby"
+correct_focus = 72.0
+possible_inclusions = Array[String](["needle", "crystal", "bubble"])

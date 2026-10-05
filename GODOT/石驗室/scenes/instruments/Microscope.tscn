@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://31ceqhjk3vy5"]
+
+[ext_resource type="Script" uid="uid://dwxobtmklni0d" path="res://scripts/instruments/Microscope.gd" id="1_micro_script"]
+[ext_resource type="Resource" uid="uid://c5gd1ht8s2qe0" path="res://scripts/data/Ruby.tres" id="2_ruby"]
+[ext_resource type="PackedScene" uid="uid://dn8jxvee7vo1w" path="res://microscope-3.glb" id="3_4m1up"]
+[ext_resource type="PackedScene" uid="uid://khyu8xp1ji8r" path="res://models/microscope/microscope_mask.glb" id="4_mask"]
+
+[sub_resource type="BoxShape3D" id="BoxShape_interaction"]
+size = Vector3(0.85, 1.05, 0.85)
+
+[node name="Microscope" type="Node3D" unique_id=1137116727]
+script = ExtResource("1_micro_script")
+current_gem = ExtResource("2_ruby")
+mask_path = NodePath("MicroscopeCamera/shader")
+gem_holder_path = NodePath("GemHolder")
+display_name = "Microscope"
+instrument_camera_path = NodePath("MicroscopeCamera")
+interaction_area_path = NodePath("InteractionArea")
+
+[node name="Model" parent="." unique_id=1142365314 instance=ExtResource("3_4m1up")]
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1421337897]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=207317118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("BoxShape_interaction")
+
+[node name="MicroscopeCamera" type="Camera3D" parent="." unique_id=774321088]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.21468697, 0.031160876)
+keep_aspect = 0
+fov = 46.7
+near = 0.033
+far = 2.0
+
+[node name="shader" parent="MicroscopeCamera" unique_id=1131546979 instance=ExtResource("4_mask")]
+transform = Transform3D(0.8, 0, 0, 0, -3.4969112e-08, -0.8, 0, 0.8, -3.4969112e-08, -0.007613778, -0.014756873, -0.8614103)
+visible = false
+
+[node name="GemHolder" type="Marker3D" parent="." unique_id=665460020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, -0.08)

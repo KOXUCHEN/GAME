@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://caiccjvycw74a"]
+
+[ext_resource type="PackedScene" uid="uid://ccu366jkrpqio" path="res://Microscope.glb" id="1_u5rfx"]
+[ext_resource type="PackedScene" uid="uid://5gltnb8kmdyb" path="res://顯微鏡遮罩.glb" id="2_ue2s5"]
+
+[node name="Node3D" type="Node3D" unique_id=1005299927]
+
+[node name="Microscope" parent="." unique_id=794638882 instance=ExtResource("1_u5rfx")]
+transform = Transform3D(4.575, 0, 0, 0, 4.575, 0, 0, 0, 4.575, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Camera3D" type="Camera3D" parent="Microscope" unique_id=1064994688]
+transform = Transform3D(0.21857925, 0, 0, 0, -9.5544035e-09, 0.21857925, 0, -0.21857925, -9.5544035e-09, 0, 0.14260541, 0.032768484)
+keep_aspect = 0
+fov = 85.0
+near = 0.033
+far = 2.0
+
+[node name="shader" parent="Microscope/Camera3D" unique_id=1277394264 instance=ExtResource("2_ue2s5")]
+transform = Transform3D(0.8, 0, 0, 0, -3.4969112e-08, -0.8, 0, 0.8, -3.4969112e-08, -0.007613778, -0.014756873, -0.8614103)
